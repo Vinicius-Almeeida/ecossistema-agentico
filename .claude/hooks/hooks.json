@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "description": "Só referência. Os hooks ativos estão em .claude/settings.json (formato oficial). Ver README.md > Hooks.",
+  "referencia": {
+    "SessionStart": "node \"$CLAUDE_PROJECT_DIR/.claude/scripts/load-context.js\"",
+    "SessionEnd": "node \"$CLAUDE_PROJECT_DIR/.claude/scripts/save-session.js\"",
+    "PreToolUse_Bash_Read_Edit_Write": "node \"$CLAUDE_PROJECT_DIR/.claude/scripts/guard.js\"",
+    "PostToolUse_Bash_git_commit": "node \"$CLAUDE_PROJECT_DIR/.claude/scripts/validate-commit.js\"",
+    "PostToolUse_Bash_git_push": "node \"$CLAUDE_PROJECT_DIR/.claude/scripts/extract-patterns.js\"",
+    "Stop": "node \"$CLAUDE_PROJECT_DIR/.claude/scripts/quality-gate.js\""
+  }
+}

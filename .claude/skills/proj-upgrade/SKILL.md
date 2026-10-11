@@ -59,7 +59,8 @@ acrescenta o que falta.
 | `commands/verify.md` | Acrescentar o passo 0 (`quality-gate.js --manual`) e os revisores especializados; não remover checagens do projeto |
 | Skill de plano do projeto | Acrescentar consulta a `solutions/` + instincts no início, e gravação do plano em `.claude/plans/` |
 | Skill de bug do projeto | Acrescentar passo 0 (já aconteceu antes?) e postmortem via `/learn` |
-| `COMMANDER-PROTOCOL.md` | Acrescentar: guardas do fan-out, prompt de delegação, BASE..HEAD, 3 camadas de verificação, relato das `Decisão:` |
+| `COMMANDER-PROTOCOL.md` | Acrescentar: guardas do fan-out, prompt de delegação, BASE..HEAD, 3 camadas de verificação, relato das `Decisão:`, nível `haiku` na regra de modelo + guarda "reconhecimento primeiro" |
+| Agente `scout` | Copiar `agents/scout.md` do TEMPLATE; acrescentar a linha dele no mapa de especialistas do CLAUDE.md e no AUTO-ROUTING §2 |
 | `AUTO-ROUTING.md` | Acrescentar a tabela de convivência (TEMPLATE §0, adaptada: sem GSD, remover linhas de GSD; com GSD, manter e avisar do bloco `GSD:workflow`), linhas das skills novas, passo [6] do fluxo |
 | Agente Commander | `tools:` ganha `Write` e `Skill`; exceção explícita "só edita `.claude/plans/`" (também no CLAUDE.md) |
 | `CLAUDE.md` do projeto | §Lições: apontar para instincts/solutions. Checklist pré-commit: linha do quality gate. Não reescrever o resto |

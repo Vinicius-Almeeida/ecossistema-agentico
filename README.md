@@ -19,7 +19,8 @@ Esqueleto reutilizável da arquitetura "Commander + Elite Agents + Skills + Auto
 ├── agents/
 │   ├── COMMANDER-PROTOCOL.md   v5: fan-out seguro, 3 camadas de verificação
 │   ├── supreme-technical-commander.md
-│   └── elite-*.md              principal, database, security, devops, performance, research
+│   ├── elite-*.md              principal, database, security, devops, performance, research (Opus)
+│   └── scout.md                reconhecimento somente leitura (Haiku) antes dos Elite
 ├── skills/
 │   ├── _template-skill/        ← copiar pra criar nova skill do domínio
 │   ├── proj-plan/              planejar (grava em plans/)

@@ -81,6 +81,7 @@ Skills `/proj-api`, `/proj-deploy`, `/proj-seguranca` não vêm no template: cri
 | Vai otimizar performance/cache | `elite-performance-architect` |
 | Decisão arquitetural complexa | `elite-principal-engineer` |
 | Pesquisa / comparação de alternativas | `elite-research-director` |
+| Precisa mapear código, achar usos, ler logs ou resumir diff/doc antes de agir | `scout` (Haiku, somente leitura) |
 
 ### 3. Detecção por ARQUIVO sendo editado
 

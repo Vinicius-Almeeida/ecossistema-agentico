@@ -52,6 +52,7 @@ plugins: `.claude/AUTO-ROUTING.md` §0.
 | `elite-devops-architect` | Docker, deploy, CI/CD, infra |
 | `elite-performance-architect` | Performance, profiling, cache |
 | `elite-research-director` | Pesquisa, RFC/ADR, comparativo |
+| `scout` (Haiku) | Reconhecimento barato: mapear código, achar usos, ler logs, resumir. Nunca decide |
 | `debugger` (inline) | Bugs, stack traces, investigação |
 | `code-reviewer` (via `/proj-review`) | Review, qualidade |
 | `test-engineer` (inline) | Testes, TDD, cobertura |

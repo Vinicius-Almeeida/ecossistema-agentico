@@ -45,7 +45,7 @@ ampla = qualidade alta sem poluir o contexto do Commander.
   4. restrições do RULES.md;
   5. contrato de retorno: `status (PRONTO | PRONTO_COM_RESSALVAS | PRECISA_CONTEXTO | BLOQUEADO)`, commits, resumo de testes em 1 linha, ressalvas.
 - **Não** colar histórico de tarefas anteriores. **Não** pedir que o especialista despache revisor.
-- Modelo: tarefa mecânica com spec completa → `model: "sonnet"`; integração/julgamento → padrão; arquitetura → `opus`.
+- Modelo: levantar contexto/ler/resumir → agente `scout` (`haiku`), antes do especialista; tarefa mecânica com spec completa → `model: "sonnet"`; integração/julgamento → padrão; arquitetura → `opus`.
 
 ### 2. Tratar o retorno
 - **PRONTO** → revisão (passo 3)

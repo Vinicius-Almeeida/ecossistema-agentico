@@ -32,13 +32,17 @@ Guardas do fan-out:
 - Paralelo só com **arquivos disjuntos**. Mesmo arquivo → sequencial.
 - Disjuntos mas em área sensível (migrations, config compartilhada) → Agent com `isolation: "worktree"`.
 - N edições pequenas e iguais → **um** especialista com a lista inteira, não N.
+- **Reconhecimento primeiro, barato:** se o Elite precisaria ler/mapear o código antes de agir,
+  despachar antes o `scout` (Haiku) e passar ao Elite só os `ACHADOS` dele. Vários `scout` em
+  paralelo para áreas distintas. Não usar `scout` para decidir nada.
 - Plano com várias tarefas → `/proj-execute-plan` (ledger + revisão por tarefa).
 
 ### Prompt de delegação (o que o especialista recebe)
 Só: onde a tarefa se encaixa (1 linha), a tarefa com valores exatos, interfaces de tarefas
 anteriores, restrições do RULES.md e o contrato de retorno
 (`PRONTO | PRONTO_COM_RESSALVAS | PRECISA_CONTEXTO | BLOQUEADO` + commits + testes em 1 linha).
-Nunca o histórico da sessão. Modelo explícito: mecânico → `sonnet`, julgamento → padrão, arquitetura → `opus`.
+Nunca o histórico da sessão. Modelo explícito: reconhecimento/leitura/resumo → `haiku` (agente `scout`),
+mecânico → `sonnet`, julgamento → padrão, arquitetura → `opus`.
 
 ### Auto-Routing
 

@@ -40,7 +40,7 @@ function writeState(state) {
 
 // Sem shell: no Windows o cmd.exe trataria `^` e aspas como escape.
 function git(...args) {
-  return execFileSync('git', args, { cwd: ROOT, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'], timeout: 15000 }).trim();
+  return execFileSync('git', args, { cwd: ROOT, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'], timeout: 15000, maxBuffer: 64 * 1024 * 1024 }).trim();
 }
 
 function sessionBase() {
@@ -58,11 +58,21 @@ function changedFiles(base) {
   return [...new Set([...tracked, ...untracked].filter(Boolean))];
 }
 
+// Não hasheia o conteúdo do diff (pode passar de MB): usa numstat + status + HEAD e,
+// para capturar edição de arquivos não commitados, caminho:mtime:size de cada arquivo.
+const HASH_IGNORE = /(^|\/)(node_modules|\.next|\.git|coverage)(\/|$)/;
+
 function stateHash(base, files) {
   const h = crypto.createHash('sha1');
-  h.update(git('diff', '--relative', base));
+  h.update(git('rev-parse', 'HEAD'));
+  h.update(git('diff', '--relative', '--numstat', base));
+  h.update(git('status', '--porcelain'));
   for (const f of files) {
-    try { h.update(f); h.update(fs.readFileSync(path.join(ROOT, f))); } catch { /* removido */ }
+    if (HASH_IGNORE.test(f)) continue;
+    try {
+      const st = fs.statSync(path.join(ROOT, f));
+      h.update(`${f}:${st.mtimeMs}:${st.size}\n`);
+    } catch { /* removido */ }
   }
   return h.digest('hex');
 }

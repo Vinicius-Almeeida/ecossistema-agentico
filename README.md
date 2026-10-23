@@ -5,6 +5,10 @@ Esqueleto reutilizável da arquitetura "Commander + Elite Agents + Skills + Auto
 > **v2 (21/09/2026):** qualidade deixou de ser só pedido em prompt. Quality gate e guardas
 > agora são hooks que bloqueiam de verdade; revisão, execução de plano e aprendizado
 > ganharam skills próprias. Backup da v1: `Dev/_template-projeto-agentico.backup-2026-09-21`.
+>
+> **v2.1 (11/10/2026):** agente `scout` (Haiku, somente leitura) faz o reconhecimento antes dos
+> Elite, e a escolha de modelo virou regra em 4 níveis: haiku (scout) → sonnet → padrão → opus.
+> Projetos já na v2 recebem o scout via `/proj-upgrade`.
 
 ## Estrutura
 
